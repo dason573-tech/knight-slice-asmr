@@ -2,27 +2,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Knight Slice ASMR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dark fantasy AI video creator. Knight Slice ASMR - explore the shadows with sound and style." />
   <style>
-    body {
-      margin: 0;
-      background: url('https://i.imgur.com/sN0JFzh.jpeg') no-repeat center center fixed;
-      background-size: cover;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       color: white;
       text-align: center;
-      padding-top: 20vh;
+      overflow: hidden;
+    }
+    .background-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding-top: 15vh;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 1em;
     }
     h1 {
       font-size: 3em;
       text-shadow: 0 0 10px black;
     }
-    p {
+    p.subtitle {
       font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 2em;
     }
     .buttons {
-      margin-top: 2em;
+      margin-bottom: 3em;
     }
     .button {
       display: inline-block;
@@ -39,15 +65,61 @@
     .button:hover {
       background-color: rgba(255, 255, 255, 0.3);
     }
+    section {
+      background: rgba(0, 0, 0, 0.6);
+      margin: 2em auto;
+      padding: 2em;
+      max-width: 800px;
+      border-radius: 20px;
+    }
+    footer {
+      margin: 3em 0 2em;
+      color: #aaa;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
-  <h1>Knight Slice ASMR</h1>
-  <p>Create AI Videos. Explore the dark realm...</p>
-  <div class="buttons">
-    <a href="https://www.instagram.com/knight.slice.asmr" class="button">Instagram</a>
-    <a href="https://www.tiktok.com/@knight.slice.asmr" class="button">TikTok</a>
-    <a href="https://dasonfire.gumroad.com/l/krsqco" class="button">Free Prompt</a>
+
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="https://cdn.pixabay.com/video/2023/06/29/170102-838105541_large.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="content">
+    <img src="https://i.imgur.com/Nz0LFe5.png" alt="Knight Slice Logo" class="logo" />
+    <h1>Knight Slice ASMR</h1>
+    <p class="subtitle">Create AI Videos. Explore the dark realm...</p>
+    <div class="buttons">
+      <a href="https://www.instagram.com/knight.slice.asmr" class="button">Instagram</a>
+      <a href="https://www.tiktok.com/@knight.slice.asmr" class="button">TikTok</a>
+      <a href="https://dasonfire.gumroad.com/l/krsqco" class="button">Free Prompt</a>
+    </div>
+
+    <section>
+      <h2>Who is Knight Slice?</h2>
+      <p>An anonymous AI creator sharing immersive, ultra-realistic fantasy videos.  
+      Inspired by ancient warriors, dark legends and ASMR atmosphere.  
+      Every visual you see is powered by AI, guided by creative instinct and a thirst for the unknown.</p>
+    </section>
+
+    <section>
+      <h2>Tools I Use</h2>
+      <p>Runway Gen-2/3, Sora, Veo, Leonardo AI, ElevenLabs, and more...  
+      Everything is tested and combined into custom workflows.</p>
+    </section>
+
+    <section>
+      <h2>Want more?</h2>
+      <p>Follow for daily AI inspiration, fantasy visuals, and free tools to start your own AI journey.</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Knight Slice ASMR — Built with shadows & code ⚔️
+    </footer>
   </div>
+
 </body>
 </html>

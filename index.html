@@ -1,125 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Knight Slice ASMR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dark fantasy AI video creator. Knight Slice ASMR - explore the shadows with sound and style." />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      text-align: center;
-      overflow: hidden;
-    }
-    .background-video {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-    .content {
-      position: relative;
-      z-index: 1;
-      padding-top: 15vh;
-    }
-    .logo {
-      width: 120px;
-      margin-bottom: 1em;
-    }
-    h1 {
-      font-size: 3em;
-      text-shadow: 0 0 10px black;
-    }
-    p.subtitle {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-bottom: 2em;
-    }
-    .buttons {
-      margin-bottom: 3em;
-    }
-    .button {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 30px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 2px solid white;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-    section {
-      background: rgba(0, 0, 0, 0.6);
-      margin: 2em auto;
-      padding: 2em;
-      max-width: 800px;
-      border-radius: 20px;
-    }
-    footer {
-      margin: 3em 0 2em;
-      color: #aaa;
-      font-size: 0.9em;
-    }
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cinzel:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <video class="background-video" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2023/06/29/170102-838105541_large.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="overlay"></div>
-
-  <div class="content">
-    <img src="https://i.imgur.com/Nz0LFe5.png" alt="Knight Slice Logo" class="logo" />
-    <h1>Knight Slice ASMR</h1>
-    <p class="subtitle">Create AI Videos. Explore the dark realm...</p>
-    <div class="buttons">
-      <a href="https://www.instagram.com/knight.slice.asmr" class="button">Instagram</a>
-      <a href="https://www.tiktok.com/@knight.slice.asmr" class="button">TikTok</a>
-      <a href="https://dasonfire.gumroad.com/l/krsqco" class="button">Free Prompt</a>
+  <!-- Ambient audio (optional, can be muted/unmuted by user) -->
+  <audio id="bg-audio" src="assets/ambient-fire.mp3" loop autoplay muted></audio>
+  <button id="audio-toggle" aria-label="Toggle ambient audio">
+    <svg height="24" width="24" fill="#bfa14a"><use href="#sound-on"></use></svg>
+  </button>
+  
+  <!-- Hero Section with Video Background -->
+  <section class="hero">
+    <video class="hero-bg" src="assets/medieval-torch-wall.mp4" autoplay loop muted playsinline poster="assets/video-fallback.jpg"></video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <!-- Torches (CSS animated flames) -->
+      <div class="torch torch-left">
+        <img src="assets/torch.svg" alt="Torch" />
+        <span class="flame"></span>
+      </div>
+      <div class="torch torch-right">
+        <img src="assets/torch.svg" alt="Torch" />
+        <span class="flame"></span>
+      </div>
+      
+      <!-- Logo/Emblem -->
+      <img src="assets/knight-avatar.png" class="knight-logo" alt="Knight Slice ASMR Avatar" />
+      <h1 class="title gothic">Knight Slice ASMR</h1>
+      <div class="rune-divider"></div>
+      <p class="subtitle">Whispers from the shadows. Slices of legend.</p>
+      
+      <!-- Burning Sword (animated SVG) -->
+      <div class="burning-sword">
+        <img src="assets/burning-sword.svg" alt="Burning Sword" />
+        <span class="sword-flame"></span>
+      </div>
+      
+      <!-- Social & Prompt Buttons -->
+      <div class="hero-buttons">
+        <a href="https://instagram.com/knightslice" class="medieval-btn insta" target="_blank" rel="noopener">
+          <img src="assets/instagram.svg" alt="" /> Instagram
+        </a>
+        <a href="https://tiktok.com/@knightslice" class="medieval-btn tiktok" target="_blank" rel="noopener">
+          <img src="assets/tiktok.svg" alt="" /> TikTok
+        </a>
+        <a href="#prompt" class="medieval-btn wax">Free Prompt</a>
+      </div>
     </div>
+    <!-- Mist animation overlay -->
+    <div class="mist"></div>
+  </section>
 
-    <section>
-      <h2>Who is Knight Slice?</h2>
-      <p>An anonymous AI creator sharing immersive, ultra-realistic fantasy videos.  
-      Inspired by ancient warriors, dark legends and ASMR atmosphere.  
-      Every visual you see is powered by AI, guided by creative instinct and a thirst for the unknown.</p>
+  <!-- Main Content -->
+  <main>
+    <section class="stone-section" id="about">
+      <h2 class="section-title">Who is Knight Slice?</h2>
+      <p class="section-text">
+        Cloaked in mystery and shadow, Knight Slice is the unseen guardian of midnight realms.<br>
+        Through ASMR, AI art, and tales carved in steel, the Knight brings whispers of ancient magic and forgotten worlds.<br>
+        Real identity? Lost to legend. The journey? Yours to join.
+      </p>
     </section>
-
-    <section>
-      <h2>Tools I Use</h2>
-      <p>Runway Gen-2/3, Sora, Veo, Leonardo AI, ElevenLabs, and more...  
-      Everything is tested and combined into custom workflows.</p>
+    
+    <section class="stone-section" id="tools">
+      <h2 class="section-title">Tools I Use</h2>
+      <ul class="tools-list">
+        <li><img src="assets/runway.svg" alt="" /> Runway</li>
+        <li><img src="assets/openai.svg" alt="" /> Sora (OpenAI)</li>
+        <li><img src="assets/veo.svg" alt="" /> Veo</li>
+        <li><img src="assets/elevenlabs.svg" alt="" /> ElevenLabs</li>
+        <li><img src="assets/midjourney.svg" alt="" /> Midjourney</li>
+        <li><img src="assets/other-ai.svg" alt="" /> ...and more</li>
+      </ul>
     </section>
-
-    <section>
-      <h2>Want more?</h2>
-      <p>Follow for daily AI inspiration, fantasy visuals, and free tools to start your own AI journey.</p>
+    
+    <section class="stone-section" id="cta">
+      <h2 class="section-title">Want more?</h2>
+      <p class="section-text">
+        Follow on Instagram or TikTok for new journeys, or claim your <a href="#prompt" class="cta-link">free AI prompt</a> to craft your own legend.
+      </p>
     </section>
+  </main>
 
-    <footer>
-      &copy; 2025 Knight Slice ASMR — Built with shadows & code ⚔️
-    </footer>
-  </div>
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 Knight Slice ASMR</span>
+      <span class="footer-icons">
+        <img src="assets/seal.svg" alt="Medieval Seal" />
+        <img src="assets/rune.svg" alt="Rune" />
+      </span>
+    </div>
+  </footer>
 
+  <!-- SVG Sprites and Icons -->
+  <svg style="display:none;">
+    <symbol id="sound-on" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5l-5 5H3zm13.5 2c0-1.77-.77-3.29-2-4.29v8.58c1.23-1 2-2.52 2-4.29z"/></symbol>
+    <symbol id="sound-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-.77-3.29-2-4.29v8.58c1.23-1 2-2.52 2-4.29zM19 3L5 21"/></symbol>
+  </svg>
+  <script src="script.js"></script>
 </body>
 </html>

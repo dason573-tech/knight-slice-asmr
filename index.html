@@ -3,651 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knight Slice ASMR — Dark Fantasy AI Guidebook</title>
-    <meta name="description" content="50+ AI prompts, quick-start guide, and a 30-day challenge to build your dark fantasy brand.">
-    
-    <meta property="og:title" content="Knight Slice ASMR — Dark Fantasy AI Guidebook">
-    <meta property="og:description" content="50+ AI prompts, quick-start guide, and a 30-day challenge to build your dark fantasy brand.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com/">
-    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg"> 
+    <title>Knight Slice ASMR</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Spectral:wght@300;400&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚔️</text></svg>">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Dark Fantasy AI Guidebook",
-      "description": "A comprehensive guidebook with 50+ AI prompts, quick-start guide, and a 30-day challenge to help you create stunning dark fantasy visuals.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Knight Slice ASMR"
-      },
-      "image": "https://yourwebsite.com/guidebook-image.jpg",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://dasonfire.gumroad.com/l/hoqeti",
-        "priceCurrency": "USD",
-        "price": "20.00",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Knight Slice ASMR"
-        }
-      }
-    }
-    </script>
-
     <style>
-        /* General Styles & Variables */
         :root {
-            --bg-dark: #0A0A0A;
+            --bg-dark: #0a0a0a;
             --bg-gradient: #121212;
-            --fog-gray: #1E232A;
-            --ember-orange: #FF6A1A;
-            --blood-red: #8B0000;
-            --steel-gray: #C0C0C0;
-            --accent-gold: #D5C7A0;
-            --glass-bubble-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.2);
             --font-heading: 'Cinzel Decorative', serif;
             --font-body: 'Spectral', serif;
-        }
-
-        /* Basic Resets & Body Styling */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            scroll-behavior: smooth;
+            --text-light: #C0C0C0;
+            --accent-gold: #D5C7A0;
+            --ember-orange: #FF6A1A;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
         }
 
         body {
-            font-family: var(--font-body);
-            color: var(--steel-gray);
             background-color: var(--bg-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background: radial-gradient(circle at 50% 120%, var(--bg-gradient) 0%, var(--bg-dark) 100%);
-        }
-
-        /* Accessibility: Reduce motion for animations */
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .hero-bg, .ember, .sword-svg, .fog-overlay, .scroll-arrow, .section-reveal {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-        /* Shared & Utility Classes */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .text-center { text-align: center; }
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-family: var(--font-heading);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(255, 106, 26, 0.3);
-            background-color: var(--ember-orange);
-            color: var(--bg-dark);
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover, .btn:focus-visible {
-            background-color: #FF8844;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 106, 26, 0.5);
-            outline: none;
-        }
-        .link-text {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .link-text:hover { color: var(--ember-orange); }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        h1 { font-size: clamp(2rem, 8vw, 4rem); }
-        h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 1.5rem; }
-        h3 { font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 1rem; }
-
-        /* Section Reveal Animation */
-        .section-reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .section-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 120%, var(--bg-gradient) 0%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            font-family: var(--font-body);
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
             text-align: center;
-            overflow: hidden;
-            padding: 2rem 1rem;
         }
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1549419137-023a1005a306?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
-            filter: grayscale(80%) brightness(30%);
-            z-index: -1;
-            animation: pan-background 30s linear infinite;
+
+        .container {
+            max-width: 90%;
+            padding: 2rem;
         }
-        .fog-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, var(--fog-gray) 70%, var(--bg-dark) 100%);
-            opacity: 0.6;
-            animation: slow-fade-in 3s forwards;
-            z-index: -1;
+
+        h1, h2 {
+            font-family: var(--font-heading);
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5rem;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
         }
-        .hero-pitch {
+
+        .subtitle {
             font-size: clamp(1rem, 3vw, 1.25rem);
             max-width: 600px;
-            margin: 1.5rem auto 2.5rem;
-            color: var(--steel-gray);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
-        .flaming-sword-container {
-            position: relative;
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 2rem;
-            overflow: hidden;
-        }
-        .sword-svg {
-            width: 100%;
-            height: 100%;
-            animation: flame-pulse 2s ease-in-out infinite alternate;
-        }
-        @keyframes flame-pulse {
-            from { transform: scale(1); opacity: 0.8; }
-            to { transform: scale(1.05); opacity: 1; }
-        }
-        @keyframes pan-background {
-            0% { background-position: 50% 50%; }
-            50% { background-position: 50% 55%; }
-            100% { background-position: 50% 50%; }
-        }
-        @keyframes slow-fade-in {
-            from { opacity: 0; }
-            to { opacity: 0.6; }
-        }
-        
-        /* Ember Particles */
-        .ember-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .ember {
-            position: absolute;
-            background: radial-gradient(circle, var(--ember-orange) 10%, var(--blood-red) 70%, transparent 80%);
-            border-radius: 50%;
-            opacity: 0;
-            animation: drift-up 10s ease-out infinite;
-        }
-        @keyframes drift-up {
-            from { transform: translateY(100vh) scale(0.2); opacity: 0; }
-            50% { opacity: 0.8; }
-            to { transform: translateY(-50px) scale(1); opacity: 0; }
-        }
-        
-        /* Glass Bubbles Grid */
-        .glass-bubbles-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 4rem;
-            margin-bottom: 4rem;
-        }
-        .glass-bubble {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--steel-gray);
-            background: var(--glass-bubble-bg);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            padding: 2rem 1rem;
-            text-align: center;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
-        .glass-bubble-title {
-            font-family: var(--font-heading);
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            margin-top: 0.5rem;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-        }
-        .glass-bubble:hover, .glass-bubble:focus-visible {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(255, 106, 26, 0.5);
-            outline: none;
-        }
-        .glass-bubble::after {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, rgba(255, 106, 26, 0.2) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s, transform 0.5s;
-            pointer-events: none;
-        }
-        .glass-bubble:hover::after {
-            opacity: 1;
-            transform: scale(1.5);
-        }
-        
-        @media (min-width: 768px) {
-            .glass-bubbles-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        /* Benefits & Cards Section */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .benefit-card {
-            background: rgba(18, 18, 18, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-        .benefit-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: clamp(1rem, 4vw, 1.25rem);
-            color: var(--accent-gold);
-        }
-        .benefit-icon {
-            width: 60px;
-            height: 60px;
-            fill: var(--ember-orange);
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .benefits-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        /* What's Inside Section */
-        .whats-inside-list {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .whats-inside-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(18, 18, 18, 0.6);
-            border-left: 3px solid var(--ember-orange);
-            padding: 1rem;
-            border-radius: 5px;
-            transition: transform 0.2s;
-        }
-        .whats-inside-item:hover {
-            transform: translateX(10px);
-        }
-        .item-icon {
-            width: 30px;
-            height: 30px;
-            fill: var(--accent-gold);
-        }
-        .placeholder-image {
-            width: 100px;
-            height: 70px;
-            background-color: var(--fog-gray);
-            border-radius: 5px;
-            flex-shrink: 0;
-            border: 1px dashed var(--steel-gray);
-        }
-        .item-text {
-            flex-grow: 1;
-        }
-        
-        @media (min-width: 768px) {
-            .whats-inside-list {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-        
-        /* Testimonials Section */
-        .testimonial-strip {
-            display: flex;
-            overflow-x: auto;
-            gap: 2rem;
-            padding: 1rem 0;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            white-space: nowrap;
-        }
-        .testimonial-strip::-webkit-scrollbar { display: none; }
-        .testimonial-card {
-            background: rgba(18, 18, 18, 0.6);
-            border-radius: 10px;
-            padding: 2rem;
-            flex-shrink: 0;
-            width: 80%;
-            max-width: 400px;
-            border-left: 3px solid var(--blood-red);
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        .testimonial-card:hover {
-            opacity: 1;
-        }
-        .testimonial-author {
-            margin-top: 1rem;
-            font-style: italic;
-            color: var(--accent-gold);
+            margin: 0 auto 2.5rem;
         }
 
-        /* Final CTA Section & Footer */
-        .final-cta {
-            background: linear-gradient(to right, var(--blood-red), var(--ember-orange));
-            padding: 2rem 1rem;
-            color: #fff;
-            text-align: center;
-            border-radius: 10px;
-            margin-top: 4rem;
-            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.5);
+        .button-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
-        .final-cta h2 {
-            color: #fff;
-            text-shadow: none;
-            margin-bottom: 0.5rem;
+
+        .glass-button {
+            display: inline-block;
+            padding: 1.25rem 2.5rem;
+            text-decoration: none;
+            color: var(--text-light);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 15px;
+            font-family: var(--font-heading);
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        .final-price {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+        .glass-button:hover,
+        .glass-button:focus-visible {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 106, 26, 0.5), inset 0 0 10px var(--ember-orange);
+            color: white;
+            outline: none;
+            border-color: var(--ember-orange);
         }
-        
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
+
+        /* Focus state for accessibility */
+        .glass-button:focus-visible {
+            outline: 2px solid var(--ember-orange);
+            outline-offset: 4px;
         }
-        footer .link-text {
-            color: rgba(255, 255, 255, 0.7);
+
+        /* Responsive layout for wider screens */
+        @media (min-width: 768px) {
+            .button-grid {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="ember-container" id="ember-container"></div>
-    
-    <header class="hero">
-        <div class="hero-bg"></div>
-        <div class="fog-overlay"></div>
-        <div class="hero-content">
-            <div class="flaming-sword-container">
-                <svg class="sword-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <defs>
-                        <linearGradient id="flame" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:var(--ember-orange);stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:var(--ember-orange);stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:var(--blood-red);stop-opacity:0.2" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="var(--ember-orange)" flood-opacity="0.8"/>
-                        </filter>
-                    </defs>
-                    <path d="M50,10 L55,30 L65,30 L60,40 L65,40 L60,50 L55,50 L50,60 L45,50 L40,50 L45,40 L40,40 L35,30 L45,30 L50,10 Z" fill="url(#flame)" filter="url(#glow)"/>
-                    <rect x="47" y="55" width="6" height="30" fill="var(--steel-gray)"/>
-                    <rect x="40" y="80" width="20" height="5" fill="var(--steel-gray)"/>
-                </svg>
+    <div class="container">
+        <header>
+            <h1>Knight Slice ASMR</h1>
+            <p class="subtitle">A faceless creator forging worlds through AI — knights, castles, and dark fantasy visions.</p>
+        </header>
+
+        <main>
+            <div class="button-grid">
+                <a href="https://dasonfire.gumroad.com/l/hoqeti" class="glass-button" aria-label="Buy the Guidebook">Buy the Guidebook</a>
+                <a href="https://dasonfire.gumroad.com/l/krsqco" class="glass-button" aria-label="Get Free Prompts">Free Prompts</a>
+                <a href="https://www.tiktok.com/@knight.slice.asmr?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="glass-button" aria-label="Follow Knight Slice ASMR on TikTok">TikTok</a>
+                <a href="https://www.instagram.com/knight.slice.asmr/?igsh=MTQ4MnV4Z3Nlbm9hMw%3D%3D" target="_blank" rel="noopener noreferrer" class="glass-button" aria-label="Follow Knight Slice ASMR on Instagram">Instagram</a>
             </div>
-            <h1>KNIGHT SLICE ASMR</h1>
-            <p class="hero-pitch">Dark Fantasy AI Guidebook</p>
-            <p class="hero-pitch">“Summon epic knights, cursed castles, and cinematic worlds with AI. 50+ prompts, quick-start guide, and a 30-day challenge.”</p>
-            <a href="https://dasonfire.gumroad.com/l/hoqeti" class="btn">Buy the Guidebook</a>
-        </div>
-    </header>
+        </main>
+    </div>
 
-    <main class="container">
-        
-        <section class="section-reveal text-center" id="bubbles">
-            <div class="glass-bubbles-grid">
-                <a href="https://dasonfire.gumroad.com/l/hoqeti" class="glass-bubble" aria-label="Buy the Guidebook">
-                    <svg class="icon-sword" viewBox="0 0 100 100" width="60" height="60" fill="var(--accent-gold)">
-                        <path d="M50 0 L40 30 L60 30 Z M45 30 L45 80 A5 5 0 0 0 55 80 L55 30 Z M40 80 A10 10 0 0 0 60 80 V90 H40 Z" />
-                    </svg>
-                    <span class="glass-bubble-title">Buy Guidebook</span>
-                </a>
-                <a href="https://dasonfire.gumroad.com/l/krsqco" class="glass-bubble" aria-label="Get Free Prompts">
-                    <svg class="icon-book" viewBox="0 0 100 100" width="60" height="60" fill="var(--accent-gold)">
-                        <path d="M70 20 H30 C25.58 20 22 23.58 22 28 V72 C22 76.42 25.58 80 30 80 H70 C74.42 80 78 76.42 78 72 V28 C78 23.58 74.42 20 70 20 Z M40 30 H60 V35 H40 Z M40 40 H60 V45 H40 Z M40 50 H70 V55 H40 Z M30 60 H70 V65 H30 Z"/>
-                    </svg>
-                    <span class="glass-bubble-title">Free Prompts</span>
-                </a>
-                <a href="https://www.tiktok.com/@knight.slice.asmr?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="glass-bubble" aria-label="Follow us on TikTok">
-                    <svg class="icon-tiktok" viewBox="0 0 100 100" width="60" height="60" fill="var(--accent-gold)">
-                        <path d="M60 20v50c0 5-4.5 10-10 10s-10-5-10-10v-35c0-10 10-10 10-10s10 0 10 10v10h-10v-5c0-2.761-2.239-5-5-5s-5 2.239-5 5v35c0 5 4.5 10 10 10s10-5 10-10v-30h10v-20z"/>
-                    </svg>
-                    <span class="glass-bubble-title">TikTok</span>
-                </a>
-                <a href="https://www.instagram.com/knight.slice.asmr/?igsh=MTQ4MnV4Z3Nlbm9hMw%3D%3D" target="_blank" rel="noopener noreferrer" class="glass-bubble" aria-label="Follow us on Instagram">
-                    <svg class="icon-instagram" viewBox="0 0 100 100" width="60" height="60" fill="var(--accent-gold)">
-                        <path d="M50 20a30 30 0 1 0 0 60a30 30 0 0 0 0-60zm0 10a20 20 0 1 1 0 40a20 20 0 0 1 0-40zm30-5a5 5 0 1 1-10 0a5 5 0 0 1 10 0z"/>
-                        <path d="M70 20h-40c-5.5 0-10 4.5-10 10v40c0 5.5 4.5 10 10 10h40c5.5 0 10-4.5 10-10v-40c0-5.5-4.5-10-10-10zM70 70h-40v-40h40v40z"/>
-                    </svg>
-                    <span class="glass-bubble-title">Instagram</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="section-reveal" id="benefits">
-            <h2 class="text-center">What you'll get</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M21 15c0 1.25-.5 2.5-1.5 3.5s-2.25 1.5-3.5 1.5h-8c-1.25 0-2.5-.5-3.5-1.5s-1.5-2.25-1.5-3.5v-10c0-1.25.5-2.5 1.5-3.5s2.25-1.5 3.5-1.5h8c1.25 0 2.5.5 3.5 1.5s1.5 2.25 1.5 3.5v10zM12 2v20M8 5h8M8 19h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h3>50+ Prompts</h3>
-                    <p>Battle-tested prompts for cinematic scenes, epic knights, and cursed landscapes.</p>
-                </div>
-                <div class="benefit-card">
-                    <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10s-10-4.477-10-10s4.477-10 10-10zM12 6v6h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h3>Quick-Start Guide</h3>
-                    <p>Start your AI creation workflow in less than one day, even if you're a total beginner.</p>
-                </div>
-                <div class="benefit-card">
-                    <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M22 10.5c0 5.8-4.7 10.5-10.5 10.5s-10.5-4.7-10.5-10.5c0-4.2 2.5-7.8 6.2-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M16 10.5c0-3.3-2.7-6-6-6s-6 2.7-6 6c0 2.4 1.4 4.5 3.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M10 10.5c0-1.657-1.343-3-3-3s-3 1.343-3 3c0 1.2 0.7 2.2 1.7 2.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h3>Viral Strategy</h3>
-                    <p>Learn the proven hashtag and sharing strategy to grow your dark fantasy brand.</p>
-                </div>
-                <div class="benefit-card">
-                    <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 22a10 10 0 1 0 0-20a10 10 0 0 0 0 20zm-1-12a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V10zM12 12v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <h3>30-Day Challenge</h3>
-                    <p>Step-by-step challenge to help you master AI art and build a consistent portfolio.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section-reveal" id="whats-inside">
-            <h2 class="text-center">What's inside the Guidebook?</h2>
-            <ul class="whats-inside-list">
-                <li class="whats-inside-item">
-                    <div class="placeholder-image" aria-label="Placeholder for an image of a prompt category"></div>
-                    <div class="item-text">
-                        <h3>Prompt categories</h3>
-                        <p>Detailed breakdown of prompt categories like Characters, Environments, and Objects.</p>
-                    </div>
-                </li>
-                <li class="whats-inside-item">
-                    <div class="placeholder-image" aria-label="Placeholder for a case study screenshot"></div>
-                    <div class="item-text">
-                        <h3>Case Studies</h3>
-                        <p>Examples of successful creations and the prompts used to make them viral.</p>
-                    </div>
-                </li>
-                <li class="whats-inside-item">
-                    <div class="placeholder-image" aria-label="Placeholder for a checklist screenshot"></div>
-                    <div class="item-text">
-                        <h3>Checklists</h3>
-                        <p>Handy checklists to keep your workflow organized and your creations on point.</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="section-reveal" id="testimonials">
-            <h2 class="text-center">Praise from the Order</h2>
-            <div class="testimonial-strip">
-                <div class="testimonial-card">
-                    <p>"This guide is a game-changer. My creations have never looked so epic. The 30-day challenge helped me so much!"</p>
-                    <p class="testimonial-author">— Sir Reginald, The Bard</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Finally, a guidebook that gets straight to the point. The prompts are pure gold and the viral strategy works like a charm."</p>
-                    <p class="testimonial-author">— Lady Elara, The Visionary</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>"I went from a complete beginner to creating stunning art in a single weekend. Highly recommend!"</p>
-                    <p class="testimonial-author">— Master Grimm, The Alchemist</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-reveal final-cta">
-            <h2>Join the Order ⚔️🔥</h2>
-            <p class="final-price">Get the Dark Fantasy Guidebook for only $20</p>
-            <a href="https://dasonfire.gumroad.com/l/hoqeti" class="btn">Buy the Guidebook</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>Copyright © Knight Slice ASMR. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Ember particle effect
-        function createEmbers() {
-            const container = document.getElementById('ember-container');
-            for (let i = 0; i < 50; i++) {
-                const ember = document.createElement('div');
-                ember.classList.add('ember');
-                ember.style.width = `${Math.random() * 5 + 5}px`;
-                ember.style.height = ember.style.width;
-                ember.style.left = `${Math.random() * 100}vw`;
-                ember.style.animationDelay = `${Math.random() * 10}s`;
-                ember.style.animationDuration = `${Math.random() * 10 + 10}s`;
-                container.appendChild(ember);
-            }
-        }
-        createEmbers();
-
-        // Section fade-in on scroll
-        const sections = document.querySelectorAll('.section-reveal');
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.2
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-    
-    </body>
+</body>
 </html>
